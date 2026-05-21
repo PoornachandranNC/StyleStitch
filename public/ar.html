@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embroidery Camera Preview | Global Womens Fashion Style</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="ar-body">
+  <main class="ar-main">
+    <header class="ar-header">
+      <h1>Live Embroidery Camera Preview</h1>
+      <p id="ar-status">Initializing camera...</p>
+    </header>
+    <section class="camera-preview-section">
+      <div class="camera-preview-wrapper">
+        <video id="camera-video" autoplay playsinline muted></video>
+        <img id="overlay-image" alt="Embroidery overlay" />
+      </div>
+    </section>
+    <section class="ar-instructions">
+      <h3>How to use</h3>
+      <ol>
+        <li>Point your camera at the plain area of the dress or fabric.</li>
+        <li>Use one finger to drag the embroidery over the fabric.</li>
+        <li>Use two fingers to pinch-zoom and rotate the design.</li>
+        <li>Tap "Capture Screenshot" to save a preview photo.</li>
+      </ol>
+      <div class="ar-compatibility">
+        <p><strong>Works on most phones:</strong></p>
+        <ul>
+          <li>Just allow camera access when the browser asks.</li>
+          <li>No ARCore / special hardware required.</li>
+          <li>Best experience on Chrome (Android) or Safari (iOS).</li>
+        </ul>
+        <div class="https-note">
+          <p><strong>Note:</strong> On some devices you may need HTTPS for camera permission to work smoothly.</p>
+          <p style="font-size: 0.85em; opacity: 0.8;">If the camera does not start, check browser permissions.</p>
+        </div>
+      </div>
+    </section>
+    <section class="design-switcher">
+      <h3>Switch Design</h3>
+      <p class="design-switcher-help">Tap a design below to instantly change the overlay.</p>
+      <div id="design-strip" class="design-strip"></div>
+    </section>
+    <button id="ar-snapshot" class="btn primary" disabled>Capture Screenshot</button>
+    <a id="ar-back" class="btn secondary" href="javascript:history.back()">Back</a>
+    <canvas id="ar-capture-canvas" style="display: none;"></canvas>
+  </main>
+
+  <!-- Camera preview + overlay scripts only on this page -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-storage-compat.js"></script>
+  <script src="js/env.local.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/ar-view.js"></script>
+</body>
+</html>

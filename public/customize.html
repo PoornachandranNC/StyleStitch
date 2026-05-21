@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customize Your Chudithar | Global Womens Fashion Style</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Global Womens Fashion Style</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="materials.html" class="active">Materials</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="https://wa.me/0000000000" target="_blank" class="whatsapp-btn">WhatsApp Us</a>
+  </header>
+
+  <main>
+    <section class="design-detail" id="builder-layout">
+      <div class="design-detail-image" id="material-panel">
+        <h2>Selected Material</h2>
+        <img id="material-image" src="" alt="Selected material" />
+        <p class="detail-meta" id="material-name"></p>
+        <p class="detail-meta" id="material-fabric"></p>
+        <p class="detail-meta" id="material-texture"></p>
+        <p class="detail-meta" id="material-price"></p>
+      </div>
+
+      <div class="design-detail-info" id="builder-panel">
+        <h1>Design Your Chudithar</h1>
+        <p>Choose neck, sleeves, embroidery and enter your measurements. We will prepare the dress and you can pay at the shop.</p>
+
+        <form id="order-form">
+          <div class="wizard-step active" data-step="1">
+            <h3>Customer Details</h3>
+            <div class="form-row">
+              <label>Customer Name *</label>
+              <input type="text" id="customer-name" required />
+            </div>
+            <div class="form-row">
+              <label>Mobile Number *</label>
+              <input type="tel" id="customer-phone" required />
+            </div>
+
+            <h3>Neck & Sleeve</h3>
+            <div class="form-row">
+              <label for="neck-type">Neck Type *</label>
+              <select id="neck-type" required>
+                <option value="">Select neck type</option>
+                <option value="boat">Boat neck</option>
+                <option value="collar">Collar neck</option>
+                <option value="v">V neck</option>
+                <option value="round">Round neck</option>
+                <option value="custom">Custom (write below)</option>
+              </select>
+            </div>
+            <div class="form-row" id="neck-custom-wrapper" style="display: none;">
+              <label for="neck-custom-text">Custom neck type &amp; notes</label>
+              <textarea id="neck-custom-text" rows="4" placeholder="Describe your neck style and any extra notes"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="sleeve-type">Sleeve Type *</label>
+              <select id="sleeve-type" required>
+                <option value="">Select sleeve type</option>
+                <option value="half">Half sleeve</option>
+                <option value="full">Full sleeve</option>
+                <option value="puff">Puff sleeve</option>
+                <option value="sleeveless">Sleeveless</option>
+                <option value="custom">Custom (write below)</option>
+              </select>
+            </div>
+            <div class="form-row" id="sleeve-custom-wrapper" style="display: none;">
+              <label for="sleeve-custom-text">Custom sleeve type &amp; notes</label>
+              <textarea id="sleeve-custom-text" rows="4" placeholder="Describe your sleeve style and any extra notes"></textarea>
+            </div>
+
+            <div class="wizard-actions detail-actions">
+              <button type="button" id="step1-next" class="btn primary">Next</button>
+            </div>
+          </div>
+
+          <div class="wizard-step" data-step="2">
+            <h3>Lengths & Style</h3>
+            <div class="form-row">
+              <label for="top-length">Top length (inches) *</label>
+              <input type="text" id="top-length" placeholder="e.g. 40" required />
+            </div>
+            <div class="form-row">
+              <label for="pant-style">Pant style *</label>
+              <select id="pant-style" required>
+                <option value="">Select pant style</option>
+                <option value="chudi">Chudi</option>
+                <option value="pant">Pant</option>
+                <option value="legging">Legging</option>
+                <option value="palazzo">Palazzo</option>
+                <option value="custom">Custom (write below)</option>
+              </select>
+            </div>
+            <div class="form-row" id="pant-custom-wrapper" style="display: none;">
+              <label for="pant-custom-text">Custom pant style &amp; notes</label>
+              <textarea id="pant-custom-text" rows="4" placeholder="Describe your pant style and any extra notes"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="bottom-length">Bottom length (inches) *</label>
+              <input type="text" id="bottom-length" placeholder="e.g. 38" required />
+            </div>
+
+            <h3>Body Measurements</h3>
+            <div class="form-row">
+              <label for="chest">Chest (inches) *</label>
+              <input type="text" id="chest" placeholder="e.g. 34" required />
+            </div>
+            <div class="form-row">
+              <label for="waist">Waist (inches) *</label>
+              <input type="text" id="waist" placeholder="e.g. 28" required />
+            </div>
+            <div class="form-row">
+              <label for="hip">Hip (inches) *</label>
+              <input type="text" id="hip" placeholder="e.g. 38" required />
+            </div>
+            <div class="form-row">
+              <label for="shoulder-width">Shoulder width (inches) *</label>
+              <input type="text" id="shoulder-width" placeholder="e.g. 14" required />
+            </div>
+            <div class="form-row">
+              <label for="sleeve-length">Sleeve length (inches) *</label>
+              <input type="text" id="sleeve-length" placeholder="e.g. 10" required />
+            </div>
+            <div class="form-row">
+              <label for="top-length-measure">Top length (inches) *</label>
+              <input type="text" id="top-length-measure" placeholder="e.g. 40" required />
+            </div>
+            <div class="form-row">
+              <label for="front-neck-depth">Front neck depth (inches) *</label>
+              <input type="text" id="front-neck-depth" placeholder="e.g. 7" required />
+            </div>
+            <div class="form-row">
+              <label for="back-neck-depth">Back neck depth (inches) *</label>
+              <input type="text" id="back-neck-depth" placeholder="e.g. 6" required />
+            </div>
+
+            <div class="wizard-actions detail-actions">
+              <button type="button" id="step2-back" class="btn secondary">Back</button>
+              <button type="button" id="step2-next" class="btn primary">Next</button>
+            </div>
+          </div>
+
+          <div class="wizard-step" data-step="3">
+            <h3>Embroidery</h3>
+            <div class="form-row">
+              <label>Use custom design</label>
+              <div class="toggle-group">
+                <label class="switch">
+                  <input type="checkbox" id="custom-design-toggle" />
+                  <span class="slider"></span>
+                </label>
+                <span class="toggle-help">Turn on to upload your own design instead of using catalog designs.</span>
+              </div>
+            </div>
+
+            <div id="catalog-emb-section">
+              <div class="form-row">
+                <label for="embroidery-design">Embroidery design</label>
+                <select id="embroidery-design">
+                  <option value="">No embroidery / decide at shop</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="emb-placement">Placement</label>
+                <select id="emb-placement">
+                  <option value="">Select placement</option>
+                  <option value="neck">Neck</option>
+                  <option value="sleeve">Sleeve</option>
+                  <option value="dupatta">Dupatta</option>
+                  <option value="bottom-border">Bottom border</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label>Design preview</label>
+                <div class="emb-preview" id="emb-preview">
+                  <p class="detail-meta">Select a design to see preview.</p>
+                  <img id="emb-preview-img" class="emb-preview-img" src="" alt="Embroidery preview" style="display: none;" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="emb-design-notes">Notes for this embroidery design</label>
+                <textarea id="emb-design-notes" rows="4" placeholder="e.g. Make this design slightly smaller and only on neckline"></textarea>
+              </div>
+              <div class="form-row">
+                <button type="button" id="emb-add-btn" class="btn secondary">+ Add this embroidery</button>
+                <p class="detail-meta">Use + to add multiple embroidery designs (neck, sleeve, dupatta, etc.).</p>
+              </div>
+            </div>
+
+            <div id="custom-emb-section">
+              <h3>Upload Your Own Design</h3>
+              <div class="form-row">
+                <label for="custom-design-image">Reference design image</label>
+                <input type="file" id="custom-design-image" accept="image/*" />
+              </div>
+              <div class="form-row">
+                <label for="custom-design-notes">Notes for embroidery</label>
+                <textarea id="custom-design-notes" rows="4" placeholder="e.g. Make this design on neckline with gold thread"></textarea>
+              </div>
+              <div class="form-row">
+                <button type="button" id="custom-emb-add-btn" class="btn secondary">+ Add this custom design</button>
+                <p class="detail-meta">You can add your uploaded design along with shop designs.</p>
+              </div>
+            </div>
+
+            <div class="form-row" id="emb-selected-wrapper">
+              <label>Selected embroideries for this order</label>
+              <div id="emb-selected-list" class="detail-meta">No embroidery added yet.</div>
+            </div>
+
+            <div class="wizard-actions detail-actions">
+              <button type="button" id="step3-back" class="btn secondary">Back</button>
+              <button type="button" id="step3-next" class="btn primary">Next</button>
+            </div>
+          </div>
+
+          <div class="wizard-step" data-step="4">
+            <h3>Pricing (Estimate)</h3>
+            <div class="form-row">
+              <label>Material price</label>
+              <div id="price-material">₹0</div>
+            </div>
+            <div class="form-row">
+              <label>Basic stitching charge</label>
+              <div id="price-stitching">₹0</div>
+            </div>
+            <div class="form-row">
+              <label>Embroidery price</label>
+              <div id="price-embroidery">₹0</div>
+            </div>
+            <div class="form-row">
+              <label><strong>Total price</strong></label>
+              <div id="price-total"><strong>₹0</strong></div>
+            </div>
+            <div class="form-row">
+              <label>Advance to pay (~40%)</label>
+              <div id="price-advance">₹0</div>
+            </div>
+
+            <h3>Pay Advance via UPI</h3>
+            <div class="admin-form-section">
+              <p class="detail-meta">Please pay the above advance amount to the shop UPI ID using any UPI app.</p>
+              <p><strong>Shop UPI ID:</strong> <span id="upi-id-text">yourshop@upi</span></p>
+              <p class="detail-meta">Scan this QR from Google Pay / PhonePe / Paytm:</p>
+              <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <div>
+                  <img id="upi-qr-image" src="assets/images/upi-placeholder.png" alt="Shop UPI QR" style="max-width: 160px; border-radius: 8px; border: 1px solid #eee;" />
+                </div>
+                <div>
+                  <p class="detail-meta">After payment, please send the payment screenshot to our WhatsApp so we can verify and confirm your order.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3>Order Preview</h3>
+            <div class="admin-form-section" id="order-summary-box">
+              <p id="order-summary-text">Fill the details in previous steps to see a summary here.</p>
+            </div>
+
+            <div class="wizard-actions detail-actions" style="margin-top: 1rem;">
+              <button type="button" id="step4-back" class="btn secondary">Back</button>
+              <button type="submit" class="btn primary">Confirm &amp; Place Order</button>
+              <button type="button" id="add-dress-btn" class="btn secondary">Add this dress</button>
+              <button type="button" id="add-to-cart-btn" class="btn secondary">Add to Cart (order later)</button>
+              <a href="tel:919789564443" class="btn secondary">Call Shop</a>
+              <a href="#" id="whatsapp-order" class="btn secondary">Send via WhatsApp</a>
+            </div>
+            <p class="detail-meta" id="order-status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div id="emb-full-overlay" class="modal-overlay hidden">
+      <div class="modal-content">
+        <img id="emb-full-img" src="" alt="Embroidery design full view" />
+        <button type="button" id="emb-full-close" class="btn secondary" style="width: 100%; margin-top: 0.75rem;">Close</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Global Womens Fashion Style. All rights reserved.</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-storage-compat.js"></script>
+  <script src="js/env.local.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/customize.js"></script>
+</body>
+</html>

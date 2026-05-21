@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Global Womens Fashion Style</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Global Womens Fashion Style - Admin</div>
+  </header>
+
+  <main>
+    <section id="admin-login" class="admin-login">
+      <h1>Admin Access</h1>
+      <p>Enter the admin password to manage designs.</p>
+      <input type="password" id="admin-password" placeholder="Admin password" />
+      <button id="admin-login-btn" class="btn primary">Enter</button>
+      <p id="admin-login-error" class="error" aria-live="polite"></p>
+    </section>
+
+    <section id="admin-panel" class="admin-panel" hidden>
+      <h1>Design, Materials & Order Management</h1>
+
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab-button active" data-tab="materials">Materials</button>
+        <button type="button" class="admin-tab-button" data-tab="catalog">Catalog</button>
+        <button type="button" class="admin-tab-button" data-tab="orders">Orders</button>
+      </div>
+
+      <section id="admin-tab-materials" class="admin-tab-section" data-tab="materials">
+        <section class="admin-form-section">
+          <h2>Materials</h2>
+          <form id="material-form">
+          <input type="hidden" id="material-id" />
+          <div class="form-row">
+            <label for="material-name">Name</label>
+            <input type="text" id="material-name" required />
+          </div>
+          <div class="form-row">
+            <label for="material-fabric">Fabric Type</label>
+            <select id="material-fabric" required>
+              <option value="cotton">Cotton</option>
+              <option value="silk">Silk</option>
+              <option value="linen">Linen</option>
+              <option value="synthetic">Synthetic</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="material-base-price">Base Material Price (₹)</label>
+            <input type="number" id="material-base-price" min="0" required />
+          </div>
+          <div class="form-row">
+            <label for="material-texture-desc">Texture / Notes</label>
+            <textarea id="material-texture-desc" rows="2" placeholder="e.g. Soft cotton, suitable for daily wear"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="material-image">Material Images</label>
+            <input type="file" id="material-image" accept="image/*" multiple />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Save Material</button>
+            <button type="button" id="material-reset" class="btn secondary">Reset</button>
+          </div>
+          <p id="material-form-status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="admin-list-section">
+          <h2>Materials List</h2>
+          <div id="admin-materials-list" class="admin-design-list">
+            <!-- Materials populated by JS -->
+          </div>
+          <div id="admin-materials-pagination" class="admin-pagination">
+            <button type="button" id="materials-prev" class="btn secondary">Prev</button>
+            <span id="materials-page-info" class="detail-meta">Page 1</span>
+            <button type="button" id="materials-next" class="btn secondary">Next</button>
+          </div>
+        </section>
+      </section>
+
+      <section id="admin-tab-catalog" class="admin-tab-section" data-tab="catalog" hidden>
+        <section class="admin-form-section">
+          <h2>Add / Edit Design / Chudithar</h2>
+          <form id="design-form">
+          <input type="hidden" id="design-id" />
+          <input type="hidden" id="design-collection" />
+          <div class="form-row">
+            <label for="design-type">Product Type</label>
+            <select id="design-type" required>
+              <option value="embroidery">Embroidery Design</option>
+              <option value="chudithar">Chudithar</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="design-name">Name</label>
+            <input type="text" id="design-name" required />
+          </div>
+          <div class="form-row">
+            <label for="design-category">Category</label>
+            <select id="design-category" required>
+              <option value="neck">Neck</option>
+              <option value="sleeve">Sleeve</option>
+              <option value="bottom">Bottom</option>
+              <option value="full-set">Full Set</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="price">Price (₹)</label>
+            <input type="number" id="price" min="0" required />
+          </div>
+          <div class="form-row">
+            <label for="design-description">Description</label>
+            <textarea id="design-description" rows="3"></textarea>
+          </div>
+          <div class="form-row" id="placement-row">
+            <span>Placement Options</span>
+            <label><input type="checkbox" value="neck" class="placement-option" /> Neck</label>
+            <label><input type="checkbox" value="sleeve" class="placement-option" /> Sleeve</label>
+            <label><input type="checkbox" value="bottom" class="placement-option" /> Bottom</label>
+            <label><input type="checkbox" value="full-set" class="placement-option" /> Full Set</label>
+          </div>
+          <div class="form-row">
+            <label for="design-image">Main Image</label>
+            <input type="file" id="design-image" accept="image/*" />
+          </div>
+          <div class="form-row" id="chudi-gallery-row">
+            <span>Chudithar Side Images (optional)</span>
+            <label>
+              Front view
+              <input type="file" class="chudi-gallery-input" data-label="front" accept="image/*" />
+            </label>
+            <label>
+              Back view
+              <input type="file" class="chudi-gallery-input" data-label="back" accept="image/*" />
+            </label>
+            <label>
+              Side view
+              <input type="file" class="chudi-gallery-input" data-label="side" accept="image/*" />
+            </label>
+          </div>
+          <div class="form-row" id="ar-texture-row">
+            <label for="design-ar-texture">AR Pattern Texture</label>
+            <input type="file" id="design-ar-texture" accept="image/*" />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Save Design</button>
+            <button type="button" id="design-reset" class="btn secondary">Reset</button>
+          </div>
+          <p id="design-form-status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="admin-list-section">
+          <h2>Existing Items</h2>
+          <div id="admin-design-list" class="admin-design-list">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+      </section>
+
+      <section id="admin-tab-orders" class="admin-tab-section" data-tab="orders" hidden>
+        <section class="admin-list-section">
+          <h2>Orders</h2>
+          <div id="admin-orders-list" class="admin-design-list">
+            <!-- Orders populated by JS -->
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <!-- Order detail modal -->
+  <div id="order-detail-overlay" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="order-detail-title">
+      <div class="order-detail-header">
+        <h3 id="order-detail-title">Order Details</h3>
+        <button type="button" id="order-detail-close" class="btn secondary order-detail-close-btn">Close</button>
+      </div>
+      <div id="order-detail-body" class="order-detail-body">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Global Womens Fashion Style. Admin use only.</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-storage-compat.js"></script>
+  <script src="js/env.local.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

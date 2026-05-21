@@ -1,0 +1,2 @@
+Placeholder folder for embroidery images and AR textures.
+Add your own JPEG/PNG assets here, or upload through the admin panel which writes to Firebase Storage instead.

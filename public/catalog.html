@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Catalog | Global Womens Fashion Style</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Global Womens Fashion Style</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="catalog.html" class="active">Catalog</a>
+      <a href="materials.html">Materials</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="https://wa.me/0000000000" target="_blank" class="whatsapp-btn">WhatsApp Us</a>
+  </header>
+
+  <main class="catalog-main">
+    <div class="catalog-container">
+      <section class="catalog-header">
+        <div class="catalog-breadcrumb">
+          <span>Home</span> › <span>Catalog</span>
+        </div>
+        <h1>Embroidery & Chudithar Collection</h1>
+        <p class="results-info">Discover our premium handcrafted designs</p>
+      </section>
+
+      <section class="catalog-filters-container">
+        <div class="filters-header">
+          <h3>Filters</h3>
+          <span class="filter-count">3 filters</span>
+        </div>
+        <div class="catalog-filters">
+          <div class="filter-group">
+            <label>Product Type</label>
+            <select id="filter-product-type">
+              <option value="all">All Products</option>
+              <option value="embroidery">Embroidery Designs</option>
+              <option value="chudithar">Chudithars</option>
+            </select>
+          </div>
+          <div class="filter-group price-filter">
+            <label>Price Range</label>
+            <div class="price-range-container">
+              <div class="price-display">
+                <span><strong id="filter-price-value">₹0 - ₹50,000</strong></span>
+              </div>
+              <div class="dual-range-slider">
+                <div class="dual-range-track" id="filter-price-track"></div>
+                <input type="range" id="filter-price-min" min="0" max="50000" step="100" value="0" />
+                <input type="range" id="filter-price-max" min="0" max="50000" step="100" value="50000" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-results">
+        <div class="results-header">
+          <div class="results-count">Loading products...</div>
+        </div>
+        <div class="catalog-grid" id="catalog-grid">
+          <!-- Catalog items injected by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Global Womens Fashion Style. All rights reserved.</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-storage-compat.js"></script>
+  <script src="js/env.local.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
