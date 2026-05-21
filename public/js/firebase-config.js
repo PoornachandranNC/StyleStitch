@@ -1,7 +1,7 @@
 // Firebase configuration: prefer env.local.js values, fallback to concrete defaults
 // eslint-disable-next-line no-unused-vars
 const firebaseConfig = (window.APP_ENV && window.APP_ENV.FIREBASE_CONFIG) || {
-  apiKey: "AIzaSyBFx4Uey-Ydg-cRjSECIPP1LlQeEAz54FA",
+  apiKey: "",
   authDomain: "global-777.firebaseapp.com",
   projectId: "global-777",
   storageBucket: "global-777.firebasestorage.app",
